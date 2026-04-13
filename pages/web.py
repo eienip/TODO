@@ -29,12 +29,11 @@ def complete_todo(index):
 st.title("Todo App :heavy_check_mark:")
 st.write("당신의 **생산성**을 크게 향상시킵니다.")
 
-for i, todo in enumerate(st.session_state.todo_list):
-    st.checkbox(label=todo, on_change=complete_todo, args=(i,))
-
 st.text_input(
     label="",
     placeholder="할일을 입력하고 Enter키를 누르세요.",
     key="TODO",
     on_change=add_todo,
 )
+for i, todo in enumerate(st.session_state.todo_list):
+    st.checkbox(label=todo, on_change=complete_todo, args=(i,))
