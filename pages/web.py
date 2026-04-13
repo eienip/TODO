@@ -1,11 +1,6 @@
 import functions
 import streamlit as st
 
-st.set_page_config(
-    page_title="할일 목록 관리",
-)
-
-
 if "todo_list" not in st.session_state:
     try:
         st.session_state.todo_list = functions.file_read()
